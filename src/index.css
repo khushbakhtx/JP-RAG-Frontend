@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+/* *: This is a wildcard selector that selects all elements on the page.*/
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Outfit;
+}
+/* #root: This selector targets the element with the id "root", which is the root container for the React application. */
+#root{
+  min-height: 100vh;
+  display: flex;
+}
