@@ -39,13 +39,20 @@ const ContextProvider = (props) => {
 
             // Process the response into formatted HTML
             let newResponse = generatedResponse
-                .split("**")
-                .map((part, index) => {
-                    return index % 2 === 1 ? `<b>${part}</b>` : part;
-                })
-                .join("");
-
+            .split("**")
+            .map((part, index) => {
+                return index % 2 === 1 ? `<b>${part}</b>` : part;
+            })
+            .join("");
+        
+            // Replace single asterisks with line breaks for paragraph spacing
             newResponse = newResponse.split("*").join("</br>");
+            
+            // Format numbered lists to ensure each step appears on a new line
+            newResponse = newResponse.replace(/(\d+\.\s)/g, "<br/><br/>$1"); // Adds space before each numbered step
+            
+            // Optionally, you can also replace multiple line breaks with a single one for cleanliness
+            newResponse = newResponse.replace(/(<br\/>){2,}/g, "<br/><br/>");    
 
             // Display the response with delay for typing effect
             for (let i = 0; i < newResponse.length; i++) {

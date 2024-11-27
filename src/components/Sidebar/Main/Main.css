@@ -159,6 +159,26 @@ body {
     gap: 20px;
 }
 
+.result-data {
+    max-height: 400px; /* Set a maximum height */
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+/* Hide scrollbar for WebKit browsers (Chrome, Safari) */
+.result-data::-webkit-scrollbar {
+    display: none; /* Hide scrollbar */
+}
+
+/* Hide scrollbar for Firefox */
+.result-data {
+    scrollbar-width: none; /* Hide scrollbar */
+}
+
+/* For Internet Explorer and Edge */
+.result-data {
+    -ms-overflow-style: none; /* Hide scrollbar */
+}
+
 .loader{
     width: 100%;
     display: flex;

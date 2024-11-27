@@ -1,16 +1,24 @@
-import { useContext } from 'react';
+import { useContext, useEffect, useRef } from 'react';
 import './Main.css';
 import { assets } from '../../../assets/assets';
 import { Context } from '../../../context/context';
 
 const Main = () => {
     const { onSent, recentPrompt, showResult, loading, resultData, setInput, input } = useContext(Context);
+    const resultContainerRef = useRef(null); // Create a ref for the result container
 
     const handleKeyPress = (e) => {
         if (e.key === 'Enter' && input.trim() !== "") {
             onSent();
         }
     };
+
+    // Effect to scroll to the bottom whenever resultData changes
+    useEffect(() => {
+        if (resultContainerRef.current) {
+            resultContainerRef.current.scrollTop = resultContainerRef.current.scrollHeight; // Scroll to bottom
+        }
+    }, [resultData]); // Depend on resultData to trigger scrolling
 
     return (
         <div className='main'>
@@ -51,16 +59,17 @@ const Main = () => {
                             <img src={assets.user_icon} alt="" />
                             <p>{recentPrompt}</p>
                         </div>
-                        <div className="result-data">
+                        <div className="result-data" ref={resultContainerRef} style={{ maxHeight: '400px', overflowY: 'auto' }}>
                             <img src={assets.ai_smart} alt="" />
-                            {/* Display loading animation */}
                             {loading ?
                                 <div className='loader'>
                                     <hr />
                                     <hr />
                                     <hr />
                                 </div>
-                                : <p dangerouslySetInnerHTML={{ __html: resultData }}></p>
+                                : 
+                                // Display formatted result with auto-scrolling
+                                <p dangerouslySetInnerHTML={{ __html: resultData }}></p>
                             }
                         </div>
                     </div>
@@ -72,13 +81,14 @@ const Main = () => {
                             value={input}
                             type="text"
                             placeholder="Enter a prompt here"
-                            onKeyDown={handleKeyPress}  // Add the key down event listener
+                            onKeyDown={handleKeyPress}
                         />
                         <div>
-                            {/* <img src={assets.gallery_icon} alt="" />
-                            <img src={assets.mic_icon} alt="" /> */}
+                            {/* Uncomment if needed */}
+                            {/*<img src={assets.gallery_icon} alt="" />*/}
+                            {/*<img src={assets.mic_icon} alt="" />*/}
                             <img
-                                onClick={onSent}  // Call onSent when the user clicks the send button
+                                onClick={onSent}
                                 src={assets.send_icon}
                                 alt=""
                             />
