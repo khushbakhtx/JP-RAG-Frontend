@@ -135,27 +135,6 @@ jp-rag/
 
 ---
 
-## **Future Improvements**
-1. **Enhanced UI**: Add features like dark mode, user profiles, and a feedback system.
-2. **Improved Retrieval**: Experiment with hybrid search (semantic + keyword-based).
-3. **Scalability**: Use cloud services like AWS or GCP for hosting and deploying the application.
-4. **Custom LLM**: Fine-tune a language model specifically on Jordan Peterson's works for more accurate and nuanced responses.
-
----
-
-## **How to Contribute**
-We welcome contributions to improve **JP-RAG**. Here’s how you can contribute:
-1. Fork the repository.
-2. Create a new branch for your feature/bugfix.
-3. Commit your changes and create a pull request.
-
----
-
-## **Acknowledgements**
-- Jordan Peterson for his thought-provoking works.
-- HuggingFace and OpenAI for providing state-of-the-art NLP tools.
-- React and FastAPI communities for their excellent frameworks and support.
-
 ## Golden Set
 Here is a list of **50 meaningful questions** derived from *Beyond the Order: 12 More Rules for Life* by Jordan Peterson. These questions cover key themes, ideas, and discussions from the book. You can use them as a **golden set** to test your Retrieval-Augmented Generation (RAG) system.
 
