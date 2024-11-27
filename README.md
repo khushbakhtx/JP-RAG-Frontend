@@ -151,11 +151,6 @@ We welcome contributions to improve **JP-RAG**. Here’s how you can contribute:
 
 ---
 
-## **License**
-This project is licensed under the MIT License. See the LICENSE file for more details.
-
----
-
 ## **Acknowledgements**
 - Jordan Peterson for his thought-provoking works.
 - HuggingFace and OpenAI for providing state-of-the-art NLP tools.
