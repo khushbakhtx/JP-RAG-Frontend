@@ -5,7 +5,7 @@ import { Context } from '../../../context/context';
 
 const Main = () => {
     const { onSent, recentPrompt, showResult, loading, resultData, setInput, input } = useContext(Context);
-    const resultContainerRef = useRef(null); // Create a ref for the result container
+    const resultContainerRef = useRef(null); 
 
     const handleKeyPress = (e) => {
         if (e.key === 'Enter' && input.trim() !== "") {
@@ -13,12 +13,12 @@ const Main = () => {
         }
     };
 
-    // Effect to scroll to the bottom whenever resultData changes
+    
     useEffect(() => {
         if (resultContainerRef.current) {
-            resultContainerRef.current.scrollTop = resultContainerRef.current.scrollHeight; // Scroll to bottom
+            resultContainerRef.current.scrollTop = resultContainerRef.current.scrollHeight;
         }
-    }, [resultData]); // Depend on resultData to trigger scrolling
+    }, [resultData]); 
 
     return (
         <div className='main'>
@@ -68,7 +68,6 @@ const Main = () => {
                                     <hr />
                                 </div>
                                 : 
-                                // Display formatted result with auto-scrolling
                                 <p dangerouslySetInnerHTML={{ __html: resultData }}></p>
                             }
                         </div>

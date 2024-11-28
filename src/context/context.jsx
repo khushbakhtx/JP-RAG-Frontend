@@ -17,27 +17,23 @@ const ContextProvider = (props) => {
         }, 10 * index);
     };
 
-    // Asynchronous function to send request to FastAPI backend
     const onSent = async () => {
         if (prevPrompts.includes(input.trim())) {
             console.log("Duplicate prompt detected.");
-            return;  // Exit if the prompt has already been sent
+            return;  
         }
 
         setResultData("");
         setLoading(true);
         setShowResult(true);
         setRecentPrompt(input);
-        setPrevPrompts((prev) => [...prev, input.trim()]); // Add current prompt to previous prompts
+        setPrevPrompts((prev) => [...prev, input.trim()]); 
 
         try {
-            // Send query to FastAPI backend
             const response = await axios.post("http://localhost:8000/query", { query: input });
 
-            // Get response and context from backend
             const { query, response: generatedResponse, context } = response.data;
 
-            // Process the response into formatted HTML
             let newResponse = generatedResponse
             .split("**")
             .map((part, index) => {
@@ -45,23 +41,17 @@ const ContextProvider = (props) => {
             })
             .join("");
         
-            // Replace single asterisks with line breaks for paragraph spacing
             newResponse = newResponse.split("*").join("</br>");
-            
-            // Format numbered lists to ensure each step appears on a new line
-            newResponse = newResponse.replace(/(\d+\.\s)/g, "<br/><br/>$1"); // Adds space before each numbered step
-            
-            // Optionally, you can also replace multiple line breaks with a single one for cleanliness
+            newResponse = newResponse.replace(/(\d+\.\s)/g, "<br/><br/>$1"); 
             newResponse = newResponse.replace(/(<br\/>){2,}/g, "<br/><br/>");    
 
-            // Display the response with delay for typing effect
             for (let i = 0; i < newResponse.length; i++) {
                 const nextWord = newResponse[i];
-                delayPara(i, nextWord); // Gradually append the response to the state
+                delayPara(i, nextWord); 
             }
 
             setLoading(false);
-            setInput(""); // Clear the input field
+            setInput(""); 
         } catch (error) {
             console.error("Error querying FastAPI:", error);
             setLoading(false);

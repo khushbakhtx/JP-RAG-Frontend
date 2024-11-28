@@ -128,7 +128,6 @@ body {
 .result{
     padding: 0px 5%;
     max-height: 70vh;
-    /* adds scroll feature */
     overflow-y: scroll;
 }
 
@@ -136,7 +135,6 @@ body {
     color: white;
 }
 
-/* hides scroll bar but feature still exists */
 .result::-webkit-scrollbar{
     display: none;
 }
@@ -160,23 +158,20 @@ body {
 }
 
 .result-data {
-    max-height: 400px; /* Set a maximum height */
-    overflow-y: auto; /* Enable vertical scrolling */
+    max-height: 400px; 
+    overflow-y: auto; 
 }
 
-/* Hide scrollbar for WebKit browsers (Chrome, Safari) */
 .result-data::-webkit-scrollbar {
-    display: none; /* Hide scrollbar */
+    display: none; 
 }
 
-/* Hide scrollbar for Firefox */
 .result-data {
-    scrollbar-width: none; /* Hide scrollbar */
+    scrollbar-width: none; 
 }
 
-/* For Internet Explorer and Edge */
 .result-data {
-    -ms-overflow-style: none; /* Hide scrollbar */
+    -ms-overflow-style: none;
 }
 
 .loader{
@@ -205,7 +200,7 @@ body {
     }
 }
 
-.result-data p{
+.result-data p {
     font-size: 17px;
     font-weight: 300;
     line-height: 1.8;
