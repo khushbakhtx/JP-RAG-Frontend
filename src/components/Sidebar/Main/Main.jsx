@@ -36,19 +36,19 @@ const Main = () => {
 
                         <div className="cards">
                             <div className="card">
-                                <p>Suggest beautiful places to see on an upcoming road trip</p>
+                                <p>How does avoiding clarity lead to unnecessary suffering?</p>
                                 <img src={assets.compass_icon} alt="" />
                             </div>
                             <div className="card">
-                                <p>Briefly summarize this concept: urban planning</p>
+                                <p>What does it mean to "imagine who you could be"?</p>
                                 <img src={assets.bulb_icon} alt="" />
                             </div>
                             <div className="card">
-                                <p>Brainstorm team bonding activities for our work retreat</p>
+                                <p>How does Peterson explain the importance of single-minded focus on personal growth?</p>
                                 <img src={assets.message_icon} alt="" />
                             </div>
                             <div className="card">
-                                <p>Improve readability of the following code</p>
+                                <p>What strategies does Peterson suggest for facing the "fog" in one's life?</p>
                                 <img src={assets.code_icon} alt="" />
                             </div>
                         </div>
