@@ -68,3 +68,13 @@
     padding-right: 10px;
     cursor: pointer;
 }
+
+
+@media (max-width: 600px) {
+    .sidebar {
+        width: 55px;
+        padding: 25px 3px 0;
+    }
+
+
+}

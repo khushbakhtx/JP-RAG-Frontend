@@ -205,3 +205,40 @@ body {
     font-weight: 300;
     line-height: 1.8;
 }
+
+
+@media (max-width: 600px) {
+    
+    .nav p {
+         font-size: 1.2rem; 
+    }
+
+    .main .greet {
+        margin: 10px 0px;
+        height: 135px;
+    }
+ 
+    .greet p {
+         font-size: 2.3rem; 
+    }
+
+    .main .card {
+        height: 105px;
+    }
+ 
+    .card p {
+         font-size: 0.9rem; 
+    }
+ 
+    .result-title p {
+         font-size: 1rem; 
+    }
+ 
+    .search-box input {
+         font-size: 0.9rem; 
+    }
+ 
+    .bottom-info {
+         font-size: 0.7rem; 
+    }
+ }
